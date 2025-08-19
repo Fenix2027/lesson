@@ -27,4 +27,16 @@ const hightScore = printAndGetHightScores(scores);
 
 console.log("Bubble tests :" + scores.length);
 console.log("Hight scores :" + hightScore);
+const bestSolution = [];
+function getBestScores(array,hightScores) {
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === hightScores) {
+            bestSolution.push(i)
+            
+        }
+        
+    }
+    return bestSolution
+}
+console.log("Value : " + getBestScores(scores, 69));
 
