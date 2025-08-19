@@ -1,27 +1,30 @@
 
 const scores =[60 , 50 , 50 , 58 , 54 , 54 ,
                58 , 52 , 54 , 48 , 61 , 64 ,
-               69 , 18 , 44 , 55 , 69,  55]
+               69 , 18 , 44 , 55 , 69,  55];
 
 
-let output ;
-let hightScores = 0;
-for (let i = 0; i < scores.length; i++) {
-     output = "Bubble solution" + i + "scores" + scores[i]
+
+
+
+
+
+
+function printAndGetHightScores(array) {
+    let output ;
+    let hightScores = 0;
+for (let i = 0; i < array.length; i++) {
+     output = "Bubble solution" + i + "scores" + array[i]
      console.log(output);
-     if (hightScores < scores[i]) {
-        hightScores = scores[i]
+     if (hightScores < array[i]) {
+        hightScores = array[i]
         
      }
 }
-console.log("Bubble tests :" + scores.lenght);
-console.log("Hight scores :" + hightScores);
-
-const bestSolutions = []
-for (let i = 0; i < scores.length; i++) {
-    if (scores[i] === hightScores) {
-       bestSolutions.push(i)
-    }
-    
+    return hightScores
 }
-console.log("Index Hight Scores : " + bestSolutions);
+const hightScore = printAndGetHightScores(scores);
+
+console.log("Bubble tests :" + scores.length);
+console.log("Hight scores :" + hightScore);
+
