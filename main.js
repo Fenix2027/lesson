@@ -1,16 +1,27 @@
 
-function getRandomElement(array) {
-    const randomIndex = Math.floor(Math.random()*array.length)
-    return array[randomIndex];
-}
+const scores =[60 , 50 , 50 , 58 , 54 , 54 ,
+               58 , 52 , 54 , 48 , 61 , 64 ,
+               69 , 18 , 44 , 55 , 69,  55]
 
-function makePhrases () {
+
+let output ;
+let hightScores = 0;
+for (let i = 0; i < scores.length; i++) {
+     output = "Bubble solution" + i + "scores" + scores[i]
+     console.log(output);
+     if (hightScores < scores[i]) {
+        hightScores = scores[i]
+        
+     }
+}
+console.log("Bubble tests :" + scores.lenght);
+console.log("Hight scores :" + hightScores);
+
+const bestSolutions = []
+for (let i = 0; i < scores.length; i++) {
+    if (scores[i] === hightScores) {
+       bestSolutions.push(i)
+    }
     
-
-const words1 = ["Мой кот", " Моя собака" , "Мой попугай"];
-const words2 = ["любит есть" , "хочет погрызть" , "всегда ищет"];
-const words3 = ["морковку" , "макароны" , "косточку"];
-
-return getRandomElement(words1) + " "+ getRandomElement(words2) + " " + getRandomElement(words3)
 }
-alert(makePhrases());
+console.log("Index Hight Scores : " + bestSolutions);
