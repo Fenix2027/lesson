@@ -1,42 +1,60 @@
+const favoriteBooks = [
+  {
+    id: 1,
+    title: 'Head First JavaScript Programming',
+    author: 'Eric Freeman',
+    price: 29.99,
+    genre: 'Programming',
+  },
+  {
+    id: 2,
+    title: 'You Don’t Know JS',
+    author: 'Kyle Simpson',
+    price: 39.99,
+    genre: 'Programming',
+  },
+  {
+    id: 3,
+    title: 'JavaScript: The Definitive Guide',
+    author: 'David Flanagan',
+    price: 49.99,
+    genre: 'Programming',
+  },
+  {
+    id: 4,
+    title: 'Lord of the Rings',
+    author: 'J.R.R. Tolkien',
+    price: 29.99,
+    genre: 'Fantasy',
+  },
+  {
+    id: 5,
+    title: 'The Witcher',
+    author: 'Andrzej Sapkowski',
+    price: 19.99,
+    genre: 'Fantasy',
+  },
+]
 
-const scores =[60 , 50 , 50 , 58 , 54 , 54 ,
-               58 , 52 , 54 , 48 , 61 , 64 ,
-               69 , 18 , 44 , 55 , 69,  55];
+const getBooksAutors = (books) => {
 
-
-
-
-
-
-
-
-function printAndGetHightScores(array) {
-    let output ;
-    let hightScores = 0;
-for (let i = 0; i < array.length; i++) {
-     output = "Bubble solution" + i + "scores" + array[i]
-     console.log(output);
-     if (hightScores < array[i]) {
-        hightScores = array[i]
-        
-     }
-}
-    return hightScores
-}
-const hightScore = printAndGetHightScores(scores);
-
-console.log("Bubble tests :" + scores.length);
-console.log("Hight scores :" + hightScore);
-const bestSolution = [];
-function getBestScores(array,hightScores) {
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] === hightScores) {
-            bestSolution.push(i)
-            
-        }
-        
+    const result = [];
+    for (let i = 0; i < books.length; i++) {
+        result.push(books[i].author);
     }
-    return bestSolution
+    return result;
 }
-console.log("Value : " + getBestScores(scores, 69));
 
+ const authors = getBooksAutors(favoriteBooks);
+ console.log(authors);
+ 
+
+const getBooksName = (books) => {
+    const as = [];
+    for (let i = 0; i < books.length; i++) {
+        as.push(books[i].title);
+    }
+    return as ;
+}
+const titles = getBooksName(favoriteBooks)
+console.log(titles);
