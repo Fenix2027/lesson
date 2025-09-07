@@ -1,60 +1,28 @@
-const favoriteBooks = [
-  {
-    id: 1,
-    title: 'Head First JavaScript Programming',
-    author: 'Eric Freeman',
-    price: 29.99,
-    genre: 'Programming',
-  },
-  {
-    id: 2,
-    title: 'You Don’t Know JS',
-    author: 'Kyle Simpson',
-    price: 39.99,
-    genre: 'Programming',
-  },
-  {
-    id: 3,
-    title: 'JavaScript: The Definitive Guide',
-    author: 'David Flanagan',
-    price: 49.99,
-    genre: 'Programming',
-  },
-  {
-    id: 4,
-    title: 'Lord of the Rings',
-    author: 'J.R.R. Tolkien',
-    price: 29.99,
-    genre: 'Fantasy',
-  },
-  {
-    id: 5,
-    title: 'The Witcher',
-    author: 'Andrzej Sapkowski',
-    price: 19.99,
-    genre: 'Fantasy',
-  },
-]
+// Напишите программу, которая фильтрует список строк и возвращает список,
+//  содержащий только имена ваших друзей.
 
-const getBooksAutors = (books) => {
+// Если в имени ровно 4 буквы, можете быть уверены, что это ваш друг! 
+// В противном случае можете быть уверены, что это не...
 
-    const result = [];
-    for (let i = 0; i < books.length; i++) {
-        result.push(books[i].author);
+// Input = ["Ryan", "Kieran", "Jason", "Yous"]
+// Output = ["Ryan", "Yous"]
+
+// Input = ["Peter", "Stephen", "Joe"]
+// Output = []
+// Входные строки будут содержать только буквы.
+// Примечание: сохраняйте исходный порядок имён в выходных данных.
+
+// Основные принципы
+function filter(array) {
+  const array1 =[];
+  for (let i = 0; i < array.length; i++) {
+    
+    const element = array[i];
+    if (element.length === 4) {
+      array1.push(element)
     }
-    return result;
+    
+  }
+  return array1 ;
 }
-
- const authors = getBooksAutors(favoriteBooks);
- console.log(authors);
- 
-
-const getBooksName = (books) => {
-    const as = [];
-    for (let i = 0; i < books.length; i++) {
-        as.push(books[i].title);
-    }
-    return as ;
-}
-const titles = getBooksName(favoriteBooks)
-console.log(titles);
+console.log(filter(["Peter", "Stephen", "Joe"]));
